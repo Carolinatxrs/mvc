@@ -42,8 +42,20 @@
       <p><?php echo $note['texto']; ?></p>
 
       <?php if (isset($_SESSION['logado'])) { ?>
+
+        <div id="confirmacao-id- <?php echo $note['id']; ?>" class="modal">
+          <div class="modal-content">
+            <h4>Confirmação</h4>
+            <p>Tem certeza que deseja excluir?</p>
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
+            <a class="waves-effect waves-light btn red" href="/notes/excluir/<?php echo $note['id']; ?>">Excluir</a><br>
+          </div>
+        </div>
+
         <a class="waves-effect waves-light btn orange" href="/notes/editar/<?php echo $note['id']; ?>">Editar</a>
-        <a class="waves-effect waves-light btn red" href="/notes/excluir/<?php echo $note['id']; ?>">Excluir</a><br>
+        <a class="waves-effect waves-light btn modal-trigger red" href="#confirmacao-id- <?php echo $note['id']; ?>">Excluir</a>
       <?php } ?>
 
     </div>
