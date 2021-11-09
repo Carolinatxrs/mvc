@@ -30,7 +30,7 @@ class Home extends Controller
     if (isset($_POST['entrar'])) {
 
       if ((empty($_POST['email'])) or (empty($_POST['senha']))) {
-        $messagem[] = "O campo email e senha são obrigatórios!";
+        $messagem[] = "M.toast({html: 'O campo email e senha são obrigatórios!', classes: 'rounded, orange'});";
       } else {
         $email = $_POST['email'];
         $senha = $_POST['senha'];

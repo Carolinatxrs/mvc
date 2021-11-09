@@ -13,9 +13,11 @@
   <br>
   <?php
   if (!empty($data['messagem'])) {
+    echo "<script>";
     foreach ($data['messagem'] as $m) {
-      echo $m . "<br>";
+      echo $m;
     }
+    echo "</script>";
   }
   ?>
 

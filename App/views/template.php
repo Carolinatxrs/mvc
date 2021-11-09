@@ -42,6 +42,10 @@
   </nav>
 
   <?php require_once '../App/views/' . $view . '.php'; ?>
+
+  <script>
+    M.AutoInit();
+  </script>
 </body>
 
 </html>

@@ -22,9 +22,9 @@ class Notes extends Controller
     if (isset($_POST['cadastrar'])) {
       // validações para campos NULL
       if (empty($_POST['titulo'])) {
-        $messagem[] = "O campo titulo não pode ser em branco";
+        $messagem[] = "M.toast({html: 'O campo titulo não pode ser em branco!', classes: 'rounded, orange'});";
       } elseif (empty($_POST['texto'])) {
-        $messagem[] = "O campo texto não pode ser em branco";
+        $messagem[] = "M.toast({html: 'O campo texto não pode ser em branco', classes: 'rounded, orange'});";
       } else {
         //UPLOAD DE ARQUIVOS
         $storage = new \Upload\Storage\FileSystem('uploads');
@@ -61,7 +61,7 @@ class Notes extends Controller
         try {
           // Success!
           $file->upload();
-          $messagem[] = "Upload feito com sucesso!";
+          $messagem[] = "M.toast({html: 'Upload feito com sucesso!', classes: 'rounded, green'});";
           $note = $this->model('Note');
           $note->titulo = $_POST['titulo'];
           $note->texto = $_POST['texto'];
@@ -89,9 +89,9 @@ class Notes extends Controller
     if (isset($_POST['atualizar'])) {
 
       if (empty($_POST['titulo'])) {
-        $messagem[] = "O campo titulo não pode ser em branco";
+        $messagem[] = "M.toast({html: 'O campo titulo não pode ser em branco!', classes: 'rounded, orange'});";
       } elseif (empty($_POST['texto'])) {
-        $messagem[] = "O campo texto não pode ser em branco";
+        $messagem[] = "M.toast({html: 'O campo texto não pode ser em branco!', classes: 'rounded, orange'});";
       } else {
         $note->titulo = $_POST['titulo'];
         $note->texto = $_POST['texto'];
@@ -103,9 +103,9 @@ class Notes extends Controller
     if (isset($_POST['atualizarImagem'])) {
 
       if (empty($_POST['titulo'])) {
-        $messagem[] = "O campo titulo não pode ser em branco";
+        $messagem[] = "M.toast({html: 'O campo titulo não pode ser em branco!', classes: 'rounded, orange'});";
       } elseif (empty($_POST['texto'])) {
-        $messagem[] = "O campo texto não pode ser em branco";
+        $messagem[] = "M.toast({html: 'O campo texto não pode ser em branco!', classes: 'rounded, orange'});";
       } else {
         //UPLOAD DE ARQUIVOS
         $storage = new \Upload\Storage\FileSystem('uploads');
@@ -116,15 +116,9 @@ class Notes extends Controller
         $file->setName($new_filename);
 
         // Validate file upload
-        // MimeType List => http://www.iana.org/assignments/media-types/media-types.xhtml
         $file->addValidations(array(
           // Ensure file is of type "image/png"
           new \Upload\Validation\Mimetype('image/png'),
-
-          //You can also add multi mimetype validation
-          //new \Upload\Validation\Mimetype(array('image/png', 'image/gif'))
-
-          // Ensure file is no larger than 5M (use "B", "K", M", or "G")
           new \Upload\Validation\Size('5M')
         ));
 
@@ -142,7 +136,7 @@ class Notes extends Controller
         try {
           // Success!
           $file->upload();
-          $messagem[] = "Upload feito com sucesso!";
+          $messagem[] = "M.toast({html: 'Upload feito com sucesso!', classes: 'rounded, green'});";
           $note = $this->model('Note');
           $note->titulo = $_POST['titulo'];
           $note->texto = $_POST['texto'];

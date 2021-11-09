@@ -18,9 +18,9 @@ class User extends Model
     $stmt->bindValue(3, $this->senha);
 
     if ($stmt->execute()) {
-      return "Cadastrado com sucesso!";
+      return "M.toast({html: 'Cadastrado com sucesso!', classes: 'rounded, green'});";
     } else {
-      return "Erro ao cadastrar!";
+      return "M.toast({html: 'Erro ao cadastrar!', classes: 'rounded, red'});";
     }
   }
   // visualizar usuarios
@@ -62,9 +62,9 @@ class User extends Model
     $stmt->bindValue(3, $id);
 
     if ($stmt->execute()) {
-      return "Atualizado com sucesso!";
+      return "M.toast({html: 'Atualizado com sucesso!', classes: 'rounded, green'});";
     } else {
-      return "Erro ao atualizar!";
+      return "M.toast({html: 'Erro ao atualizar!', classes: 'rounded, red'});";
     }
   }
   // remoção
@@ -75,9 +75,9 @@ class User extends Model
     $stmt->bindValue(1, $id);
 
     if ($stmt->execute()) {
-      return "Removido com sucesso!";
+      return "M.toast({html: 'Removido com sucesso!', classes: 'rounded, green'});";
     } else {
-      return "Erro ao remover.";
+      return "M.toast({html: 'Erro ao remover', classes: 'rounded, red'});";
     }
   }
 }

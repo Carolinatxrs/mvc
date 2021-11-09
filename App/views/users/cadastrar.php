@@ -3,9 +3,11 @@
 
   <?php
   if (!empty($data['messagem'])) {
+    echo "<script>";
     foreach ($data['messagem'] as $m) {
-      echo $m . "<br>";
+      echo $m;
     }
+    echo "</script>";
   }
   ?>
 
@@ -14,7 +16,7 @@
       <div class="row">
         <div class="input-field col s12">
           <input id="nome" type="text" name="nome" class="validate">
-          <label for="nome">Título</label>
+          <label for="nome">Nome</label>
         </div>
       </div>
       <div class="row">

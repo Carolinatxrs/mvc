@@ -22,7 +22,7 @@ class Users extends Controller
     if (isset($_POST['cadastrar'])) {
 
       if ((empty($_POST['nome'])) or (empty($_POST['email'])) or (empty($_POST['senha']))) {
-        $messagem[] = "Os campos Nome, E-mail e Senha são obrigatórios!";
+        $messagem[] = "M.toast({html: 'Os campos Nome, E-mail e Senha são obrigatórios!', classes: 'rounded, orange'});";
       } else {
         $nome = $_POST['nome'];
         $email = $_POST['email'];
@@ -48,7 +48,7 @@ class Users extends Controller
     if (isset($_POST['atualizar'])) {
 
       if ((empty($_POST['nome'])) or (empty($_POST['email']))) {
-        $messagem[] = "O campo nome e email não podem ser em branco!";
+        $messagem[] = "M.toast({html: 'O campo nome e email não podem ser em branco!', classes: 'rounded, orange'});";
       } else {
         $nome = $_POST['nome'];
         $email = $_POST['email'];

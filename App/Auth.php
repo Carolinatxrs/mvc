@@ -24,10 +24,10 @@ class Auth
         $_SESSION['userNome'] = $resultado['nome'];
         header('Location: /home/index');
       } else {
-        return "Senha inválida!";
+        return "M.toast({html: 'Senha inválida!', classes: 'rounded, red'});";
       }
     } else {
-      return "Email inválido!";
+      return "M.toast({html: 'Email inválido!', classes: 'rounded, red'});";
     }
   }
 

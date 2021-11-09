@@ -47,9 +47,9 @@ class Note extends Model
     $stmt->bindValue(3, $this->imagem);
 
     if ($stmt->execute()) {
-      return "Cadastrado com sucesso!";
+      return "M.toast({html: 'Cadastrado com sucesso!', classes: 'rounded, green'});";
     } else {
-      return "Erro ao cadastrar!";
+      return "M.toast({html: 'Erro ao cadastrar!', classes: 'rounded, red'});";
     }
   }
   //alterando registro
@@ -62,9 +62,9 @@ class Note extends Model
     $stmt->bindValue(3, $id);
 
     if ($stmt->execute()) {
-      return "Atualizado com sucesso!";
+      return "M.toast({html: 'Atualizado com sucesso!', classes: 'rounded, green'});";
     } else {
-      return "Erro ao atualizar!";
+      return "M.toast({html: 'Erro ao atualizar!', classes: 'rounded, red'});";
     }
   }
   //alterando registro com imagem
@@ -78,9 +78,9 @@ class Note extends Model
     $stmt->bindValue(4, $id);
 
     if ($stmt->execute()) {
-      return "Atualizado com sucesso!";
+      return "M.toast({html: 'Atualizado com sucesso!', classes: 'rounded, green'});";
     } else {
-      return "Erro ao atualizar!";
+      return "M.toast({html: 'Erro ao atualizar!', classes: 'rounded, red'});";
     }
   }
   //ecluir imagem na edição
@@ -92,9 +92,9 @@ class Note extends Model
     $stmt->bindValue(2, $id);
 
     if ($stmt->execute()) {
-      return "Imagem excluida com sucesso!";
+      return "M.toast({html: 'Imagem excluida com sucesso!', classes: 'rounded, green'});";
     } else {
-      return "Erro ao excluir imagem!";
+      return "M.toast({html: 'Erro ao excluir imagem!', classes: 'rounded, red'});";
     }
   }
   // excluir registro
@@ -110,9 +110,9 @@ class Note extends Model
     $stmt->bindValue(1, $id);
 
     if ($stmt->execute()) {
-      return "Excluído com sucesso!";
+      return "M.toast({html: 'Excluído com sucesso!', classes: 'rounded, green'});";
     } else {
-      return "Erro ao excluir!";
+      return "M.toast({html: 'Erro ao excluir!', classes: 'rounded, red'});";
     }
   }
   //buscar registros
