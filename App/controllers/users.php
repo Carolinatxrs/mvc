@@ -17,6 +17,7 @@ class Users extends Controller
   public function cadastrar()
   {
     Auth::checkLogin();
+    Auth::checkLoginAdmin();  //exemplo limitar rota
     $messagem = array();
 
     if (isset($_POST['cadastrar'])) {
@@ -66,6 +67,7 @@ class Users extends Controller
   public function remover($id = '')
   {
     Auth::checkLogin();
+    Auth::checkLoginAdmin();  //exemplo limitar rota
     $messagem = array();
 
     $user = $this->model('User');
