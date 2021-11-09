@@ -13,11 +13,14 @@ class App
     $url = $this->parseURL();
 
     /*condição se existe controller 
-    atualizar dado do controller
-    se não permanece padrão*/
+    atualizar dado do controller*/
     if (file_exists('../App/controllers/' . $url[1] . '.php')) {
       $this->controller = $url[1];
       unset($url[1]);
+    } elseif (empty($url[1])) { //se vazio entra no home
+      $this->controller = 'home';
+    } else { //se valor não existe retorna pagina de erro
+      $this->controller = 'erro404';
     }
 
     require_once '../App/controllers/' . $this->controller . '.php';
